@@ -56,6 +56,26 @@ This Python script demonstrates a deep learning approach for image classificatio
 5. **Model Saving**:
    - Saves the trained model if early stopping is not triggered.
 
+# test.py 
+
+## Image Prediction with Vision Transformer (ViT)
+
+This Python script demonstrates how to load a pre-trained Vision Transformer (ViT) model, process an image, and predict the classes present in the image using PyTorch and the transformers library.
+
+### How the Code Works
+
+1. **Model Loading**:
+   - Loads a pre-trained Vision Transformer (ViT) model from a specified path.
+   - Sets the model to evaluation mode and transfers it to an appropriate device (GPU if available, otherwise CPU).
+
+2. **Image Processing**:
+   - Opens an image from a specified path and converts it to RGB.
+   - Applies a series of transformations (resize, tensor conversion, and normalization) to prepare the image for the model.
+
+3. **Prediction**:
+   - Passes the processed image through the model to obtain logits.
+   - Applies the sigmoid function to convert logits to probabilities.
+   - Identifies classes with probabilities above a certain threshold and prints them.
 
 
 
