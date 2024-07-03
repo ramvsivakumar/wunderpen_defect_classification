@@ -31,6 +31,30 @@ This script automates extracting class information from image filenames, copying
 - Run the script to process the images and generate the CSV.
 
 # training.py
+## Image Classification with Transformers
+
+This Python script demonstrates a deep learning approach for image classification using the Vision Transformer (ViT) model from the `transformers` library. It includes data preprocessing, model training, evaluation, and early stopping to prevent overfitting.
+
+### How the Code Works
+
+1. **Dataset Preparation**:
+   - `CustomDataset`: A custom dataset class that reads image paths and labels from a CSV file, loads the images, and applies transformations.
+   - The dataset is split into training and evaluation subsets.
+
+2. **Model Setup**:
+   - Loads a pre-trained Vision Transformer (ViT) model specifically designed for image classification.
+   - The model is adapted to predict 12 different classes.
+
+3. **Training Process**:
+   - Utilizes the AdamW optimizer with a linear learning rate scheduler.
+   - Implements a training loop that includes loss calculation and optimizer updates.
+   - Evaluates the model on the validation dataset after each epoch and calculates metrics such as precision, recall, F1 score, and accuracy.
+
+4. **Early Stopping**:
+   - Monitors validation loss and stops training if there's no improvement over a set number of epochs to prevent overfitting.
+
+5. **Model Saving**:
+   - Saves the trained model if early stopping is not triggered.
 
 
 
