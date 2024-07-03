@@ -1,7 +1,7 @@
 # wunderpen_defect_classification
 HandwrittenTextClassifier is a powerful tool designed to write and classify handwritten text on various materials such as envelopes, letter pads, and more. This algorithm classifies the handwritten machine-generated images. 
 
-# data_processing.py working:
+# data_processing.py:
 
 ## Image Processing and Labeling Script
 
