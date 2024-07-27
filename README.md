@@ -101,3 +101,8 @@ Before running this application, ensure you have the following installed:
 - PIL
 
 
+#Output
+
+![Screenshot from 2024-07-27 15-59-29](https://github.com/user-attachments/assets/c244fb5b-a6dd-4b87-b759-a95c2b165bda)
+![Screenshot from 2024-07-27 15-59-18](https://github.com/user-attachments/assets/f050e12d-bee8-44ea-9caa-30df99368431)
+
