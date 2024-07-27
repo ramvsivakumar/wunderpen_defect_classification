@@ -81,7 +81,7 @@ This Python script demonstrates how to load a pre-trained Vision Transformer (Vi
 
 # gradio_test.py
 
-This repository contains a Python application designed to demonstrate image classification using a Vision Transformer (ViT) model. The application provides a user interface created with Gradio, allowing users to either upload images or navigate through a predefined set of test and support images for classification.
+This Python application is designed to demonstrate image classification using a Vision Transformer (ViT) model. The application provides a user interface created with Gradio, allowing users to either upload images or navigate through a predefined set of test and support images for classification.
 
 ## Features
 
