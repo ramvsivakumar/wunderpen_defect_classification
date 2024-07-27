@@ -102,7 +102,28 @@ Before running this application, ensure you have the following installed:
 
 
 #Output
+## Gradio Interface Explanation
 
-![Screenshot from 2024-07-27 15-59-29](https://github.com/user-attachments/assets/c244fb5b-a6dd-4b87-b759-a95c2b165bda)
+### Image Selection
+- **Select Image Source**: Users can choose between uploading their own images or using predefined test images from the 'Test Stack'.
+- **Upload Image for Prediction**: Allows users to upload an image file from their computer for classification.
+
+### Image Display
+- **Test Image**: Displays the currently selected test image from the predefined set or the uploaded image.
+- **Support Image**: Shows a support image that may provide additional context or reference for the test image.
+
+### Navigation
+- **Previous** and **Next**: These buttons allow the user to navigate through the test and support images in the 'Test Stack'.
+
+### Prediction Output
+- **Predicted Class**: Displays the classification result of the image as determined by the model.
+- **Prediction Confidence**: Shows the confidence level of the prediction as a percentage.
+
+### File Information
+- **Test Image Filename**: Displays the file name of the currently loaded test image.
+- **Support Image Filename**: Displays the file name of the currently loaded support image.
+
 ![Screenshot from 2024-07-27 15-59-18](https://github.com/user-attachments/assets/f050e12d-bee8-44ea-9caa-30df99368431)
+![Screenshot from 2024-07-27 15-59-29](https://github.com/user-attachments/assets/c244fb5b-a6dd-4b87-b759-a95c2b165bda)
+
 
