@@ -7,9 +7,9 @@ from torchvision import transforms
 from transformers import ViTForImageClassification
 
 
-model_path = './content/drive/MyDrive/berlin/model/'
+model_path = '/content/drive/MyDrive/berlin/model/'
 num_labels = 12
-test_images_dir = './content/drive/MyDrive/berlin/test_images/Prodfile_Job_10_Envelope'
+test_images_dir = '/content/drive/MyDrive/berlin/test_images/Prodfile_Job_10_Envelope'
 support_images_dir = '/content/drive/MyDrive/berlin/test_images/Gcode_Images'
 def is_image_file(filename):
     return filename.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.gif'))
@@ -46,8 +46,11 @@ def predict_image(model, processed_image):
     with torch.no_grad():
         outputs = model(processed_image.to(model.device))
         probabilities = torch.nn.functional.softmax(outputs.logits, dim=1)
+
         confidence, predicted_class = torch.max(probabilities, dim=1)
-    return predicted_class.item(), confidence.item()
+        predictions = torch.sigmoid(outputs.logits).squeeze(0)
+
+    return predictions, confidence.item()
 
 
 def update_display(test_image_path, support_image_path, target_filename, support_filename):
@@ -55,14 +58,19 @@ def update_display(test_image_path, support_image_path, target_filename, support
     support_image = Image.open(support_image_path)
     return test_image, support_image, target_filename, support_filename
 
+def print_class_predictions(predictions, threshold=0.5):
+    class_names = [f'C{i}' for i in range(predictions.shape[0])]
+    predicted_labels = [class_names[i] for i, pred in enumerate(predictions) if pred > threshold]
+    return predicted_labels
 
 def predict(source_choice, test_image, upload_image):
     if source_choice == "Upload":
         processed_image = process_image(upload_image)
     else:
         processed_image = process_image(test_image)
-    predicted_class, confidence = predict_image(model, processed_image)
-    return f"Class: C{predicted_class}", f"Confidence: {confidence:.2%}"
+    predictions, confidence = predict_image(model, processed_image)
+    predicted_classes = print_class_predictions(predictions)
+    return f"Class: {predicted_classes}", f"Confidence: {confidence:.2%}"
 
 
 def next_image():
